@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escalas</title>
+    <link rel="icon" type="image/png" href="./img/Flor_de_ESCOM.png">
+    <link rel="stylesheet" href="./css/main.css">
+  </head>
+
+  <body class="bg-[#002d72]">
+    <h1>Aprende las escalas musicales</h1>
+    
+    <form name="formulario">
+      <label for="nota-musical">Escoja la nota de la escala musical:</label>
+      <select required name="nota-musical" id="nota-musical">
+        <option value="Do">DO</option>
+        <option value="Do#">DO#</option>
+        <option value="Re">RE</option>
+        <option value="Re#">RE#</option>
+        <option value="Mi">MI</option>
+        <option value="Fa">FA</option>
+        <option value="Fa#">FA#</option>
+        <option value="Sol">SOL</option>
+        <option value="Sol#">SOL#</option>
+        <option value="La">LA</option>
+        <option value="La#">LA#</option>
+        <option value="Si">SI</option>
+      </select>
+  
+      <br><br>
+      <label for="escala-musical">Escoja el tipo de escala musical:</label>
+      <select name="escala-musical" id="escala-musical">
+        <option value="Mayor">Mayor</option>
+        <option value="MenorN">Menor Natural</option>
+        <option value="MenorH">Menor Harmonica</option>
+        <option value="MenorMA">Menor Melódica Ascendente</option>
+        <option value="MenorMD">Menor Melódica Descendente</option>
+      </select>
+      
+      <br><br>
+      <input type="button" value="Mostrar escala" onclick="desplegarEscala()">
+    </form>
+
+    <div class="muestra-escala"></div>
+  </body>
+  <script src="./js/escalas.js"></script>
+</html>
