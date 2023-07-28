@@ -186,14 +186,14 @@ function desplegarEscala(){
             //alert("Escala MenorN")
             break;
         case "MenorH":
-            alert("Escala MenorH")
+            alert("Escala MenorH esta por definir")
             escalaMenorH(arregloEscala, arregloAux, muestraEscala)
             break;
         case "MenorMA":
-            alert("Escala MenorMA")
+            alert("Escala MenorMA esta por definir")
             break;
         case "MenorMD":
-            alert("Escala MenorMD")
+            alert("Escala MenorMD esta por definir")
             break;
         default:
             alert("Error al seleccionar la opción")
