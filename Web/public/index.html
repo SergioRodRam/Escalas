@@ -1,49 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <!--  METADATOS -->
+    <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--  TITULO  -->
     <title>Escalas</title>
-    <link rel="icon" type="image/png" href="./img/Flor_de_ESCOM.png">
-    <link rel="stylesheet" href="./css/main.css">
+
+    <!--  FAVICON -->
+    <link rel="icon" type="image/png" href="./img/logo.png">
+
+    <!--  CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!--  FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@100&display=swap" rel="stylesheet">
   </head>
 
   <body class="bg-[#002d72]">
-    <h1>Aprende las escalas musicales</h1>
-    
-    <form name="formulario">
-      <label for="nota-musical">Escoja la nota de la escala musical:</label>
-      <select required name="nota-musical" id="nota-musical">
-        <option value="Do">DO</option>
-        <option value="Do#">DO#</option>
-        <option value="Re">RE</option>
-        <option value="Re#">RE#</option>
-        <option value="Mi">MI</option>
-        <option value="Fa">FA</option>
-        <option value="Fa#">FA#</option>
-        <option value="Sol">SOL</option>
-        <option value="Sol#">SOL#</option>
-        <option value="La">LA</option>
-        <option value="La#">LA#</option>
-        <option value="Si">SI</option>
-      </select>
-  
-      <br><br>
-      <label for="escala-musical">Escoja el tipo de escala musical:</label>
-      <select name="escala-musical" id="escala-musical">
-        <option value="Mayor">Mayor</option>
-        <option value="MenorN">Menor Natural</option>
-        <option value="MenorH">Menor Harmonica</option>
-        <option value="MenorMA">Menor Melódica Ascendente</option>
-        <option value="MenorMD">Menor Melódica Descendente</option>
-      </select>
-      
-      <br><br>
-      <input type="button" value="Mostrar escala" onclick="desplegarEscala()">
-    </form>
 
-    <div class="muestra-escala"></div>
+    <main class="contenedor-pagina">
+      <h1>Escalas musicales</h1>
+      
+      <section class="contenedor-formulario">
+        <form name="formulario" class="formulario">
+          <label for="nota-musical" class="label-nota-musical">Escoja la nota de la escala musical:</label>
+
+          <select required name="nota-musical" id="nota-musical">
+            <option value="Do">DO</option>
+            <option value="Do#">DO#</option>
+            <option value="Re">RE</option>
+            <option value="Re#">RE#</option>
+            <option value="Mi">MI</option>
+            <option value="Fa">FA</option>
+            <option value="Fa#">FA#</option>
+            <option value="Sol">SOL</option>
+            <option value="Sol#">SOL#</option>
+            <option value="La">LA</option>
+            <option value="La#">LA#</option>
+            <option value="Si">SI</option>
+          </select>
+          
+          <br><br>
+          
+          <label for="escala-musical" class="label-escala-musical">Escoja el tipo de escala musical:</label>
+
+          <select name="escala-musical" id="escala-musical">
+            <option value="Mayor">Mayor</option>
+            <option value="MenorN">Menor Natural</option>
+            <option value="MenorH">Menor Harmonica</option>
+            <option value="MenorMA">Menor Melódica Ascendente</option>
+            <option value="MenorMD">Menor Melódica Descendente</option>
+          </select>
+          
+          <br><br>
+          
+          <input type="button" class="btn" value="Mostrar escala" onclick="desplegarEscala()">
+        </form>
+      </section>
+      
+      <section class="muestra-escala">
+
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer-derechos">Sitio creado por Sergio Rodríguez Ramírez (2023) &#169;</p>
+    </footer>
   </body>
+
+  <!--  SCRIPT  -->
   <script src="./js/escalas.js"></script>
 </html>

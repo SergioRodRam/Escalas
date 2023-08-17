@@ -52,12 +52,14 @@ function valArray(val_nota, aux){
     
     for (let i = 0; i < aux.length; i++) {
         if (position == 0) {
-            i = aux.length
+            //i = aux.length
             aux = NOTAS.slice()
+            return;
         } else {
             if (position == aux.length) {
                 position = 0
             }
+            
             aux[i] = NOTAS[position]
             position++
         }
@@ -105,7 +107,7 @@ function escalaMayor(arreglo, aux, muestra){
     agregarNota(muestra, arreglo[7])
 }
 
-function escalaMenorN(arreglo, aux, muestra){
+function escalaMenorNat(arreglo, aux, muestra){
 
     /*
     Estructura de la escala menor natural
@@ -129,34 +131,72 @@ function escalaMenorN(arreglo, aux, muestra){
     agregarNota(muestra, arreglo[7])
 }
 
-function escalaMenorH(arreglo, aux, muestra){
+function escalaMenorHar(arreglo, aux, muestra){
 
     /*
-    Estructura de la escala menor natural
+    Estructura de la escala menor harmonica
     console.log("La estructura de la escala es esta:");
     console.log("Nota -> Tono -> Semi -> Tono -> Tono -> Semi -> Tono y 1/2 -> Semi");
     */
 
     for (let i = 0, potencia = 0; i < arreglo.length-1; i++) {
         if (i < 2) {
-            arreglo[i] = aux[i*2]
+            arreglo[i] = aux[2*i]
         }else{
-            if (i >= 5) {
-                potencia=1
+            if (i == 5) {
+                arreglo[i] = aux[2*(i-1)]
+            }else{
+                arreglo[i] = aux[2*i-1]
             }
-            arreglo[i] = aux[i*2-Math.pow(2,potencia)]
         }
-    
         agregarNota(muestra, arreglo[i])
     }
+    
+    arreglo[7] = aux[0]
+    agregarNota(muestra, arreglo[7])
+}
 
-    arreglo[0] = aux[0]
-    arreglo[1] = aux[2]     //2^1
-    arreglo[2] = aux[3]     //2^2-1
-    arreglo[3] = aux[5]     //2^3-3
-    arreglo[4] = aux[7]
-    arreglo[5] = aux[8]
-    arreglo[6] = aux[11]
+function escalaMenorMelAsc(arreglo, aux, muestra){
+
+    /*
+    Estructura de la escala menor melódica ascendente
+    console.log("La estructura de la escala es esta:");
+    console.log("Nota -> Tono -> Semi -> Tono -> Tono -> Tono -> Tono -> Semi");
+    */
+
+    for (let i = 0, potencia = 0; i < arreglo.length-1; i++) {
+        if (i < 2) {
+            arreglo[i] = aux[2*i]
+        }else{
+            arreglo[i] = aux[2*i-1]
+        }
+        agregarNota(muestra, arreglo[i])
+    }
+    
+    arreglo[7] = aux[0]
+    agregarNota(muestra, arreglo[7])
+}
+
+function escalaMenorMelDes(arreglo, aux, muestra){
+
+    /*
+    Estructura de la escala menor melódica descendente
+    console.log("La estructura de la escala es esta:");
+    console.log("Nota -> Tono -> Tono -> Semi -> Tono -> Tono -> Semi -> Tono");
+    */
+
+    for (let i = 0, potencia = 0; i < arreglo.length-1; i++) {
+        if (i < 3) {
+            arreglo[i] = aux[2*i]
+        }else{
+            if (i == 6) {
+                arreglo[i] = aux[2*(i-1)]
+            } else {
+                arreglo[i] = aux[2*i-1]
+            }
+        }
+        agregarNota(muestra, arreglo[i])
+    }
 
     arreglo[7] = aux[0]
     agregarNota(muestra, arreglo[7])
@@ -182,18 +222,16 @@ function desplegarEscala(){
             escalaMayor(arregloEscala, arregloAux, muestraEscala)
             break;
         case "MenorN":
-            escalaMenorN(arregloEscala, arregloAux, muestraEscala)
-            //alert("Escala MenorN")
+            escalaMenorNat(arregloEscala, arregloAux, muestraEscala)
             break;
         case "MenorH":
-            alert("Escala MenorH esta por definir")
-            escalaMenorH(arregloEscala, arregloAux, muestraEscala)
+            escalaMenorHar(arregloEscala, arregloAux, muestraEscala)
             break;
         case "MenorMA":
-            alert("Escala MenorMA esta por definir")
+            escalaMenorMelAsc(arregloEscala, arregloAux, muestraEscala)
             break;
         case "MenorMD":
-            alert("Escala MenorMD esta por definir")
+            escalaMenorMelDes(arregloEscala, arregloAux, muestraEscala)
             break;
         default:
             alert("Error al seleccionar la opción")
