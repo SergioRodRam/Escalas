@@ -2,32 +2,26 @@
     --gradiente1: #002d72;
     --gradiente2: #53917E;
 
-    --fondo-blanco: white;
-    --fondo-negro:  black;
+    --color-blanco: white;
+    --color-negro:  black;
 
-    --fondo:        rgb(176, 219, 67, 50%);
-    --fondo-fuerte: rgb(176, 219, 67, 100%);
+    --color:        rgb(62, 86, 158);
+    --color-ligero: rgb(62, 86, 158, 50%);
 
-    --fondo2:           rgb(54, 36, 23, 50%);
-    --fondo2-fuerte:    rgb(54, 36, 23, 100%);
+    --color2:           rgb(145, 47, 47);
+    --color2-ligero:    rgb(145, 47, 47, 50%);
 
-    --fondo3:           rgb(254, 153, 32, 50%);
-    --fondo3-fuerte:    rgb(254, 153, 32, 100%);
+    --color3:           rgb(253, 253, 88);
+    --color3-ligero:    rgb(253, 253, 88, 50%);
 
-    --fondo4:           rgb(157, 172, 255, 50%);
-    --fondo4-fuerte:    rgb(157, 172, 255, 100%);
+    --color4:           rgb(53, 140, 53);
+    --color4-ligero:    rgb(53, 140, 53, 50%);
 
-
-    --titulos: #9DACFF;
-
-    --hover_fondo: #FE9920;
-    --hover_texto: #ffffff;
-
-    --texto-primario:   #000000;
-    --texto-primario2:   #ffffff;
-    --texto-secundario: #FA7921;
-    --texto-terciario:  #b0db43;
-    --texto-cuaternario:  #9DACFF;
+    --color5:           rgb(245, 187, 80);
+    --color5-ligero:    rgb(245, 187, 80, 50%);
+    
+    --color6:           rgb(174, 42, 174);
+    --color6-ligero:    rgb(174, 42, 174, 50%);
 }
 
 *{
@@ -41,18 +35,45 @@ html{
 }
 
 body{
-    font-family: 'Tourney', cursive, Helvetica, sans-serif;
-
-    background: var(--gradiente1);
+    font-family: fantasy;
     
-    color: #FEFFFE;
+    color: var(--color-blanco);
 
-    font-size: 1.60rem;
+    font-size: 1.6rem;
+    font-weight: normal;
 }
 
-.sticky{
-    position: sticky;
-    top: 0rem;
+select{
+    all: unset;
+    
+    border-radius: 50px;
+    border: solid;
+    
+    background-color: var(--color4);
+
+    align-items: center;
+    
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+    color: var(--color5);
+
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-negro);
+}
+
+.tarjeta{
+    height: 100%;
+    
+    border-radius: 50px;
+    background: #358c35;
+    box-shadow:  
+        24px 24px 47px #1d4d1d,
+        -24px -24px 47px #4dcb4d;
 }
 
 .flex{
@@ -67,14 +88,312 @@ body{
     align-items: center;
 }
 
-.background{
-    height: auto;
-    min-height: 100vh;
-    border-radius: 0rem 0rem 0rem 0rem;
+/***************  TITULO    ***************/
+.contenedor-titulo{
+    height: 20vh;
 
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-attachment: fixed;
+    background-color: var(--color);
 
-    padding: 5rem 0rem 5rem 0rem;
+    color: var(--color-blanco);
+    text-align: center;
+    font-family: 'Tourney', cursive, fantasy;
+    font-size: 3rem;
 }
+
+/***************  CONTENEDOR MAIN    ***************/
+.contenedor-pagina{
+    min-height: 175vh;
+
+    background-color: var(--color4);
+
+    grid-template-columns: repeat(2, minmax(10%, 50%));
+    grid-template-rows: minmax(10%, 15%) minmax(10%, 60%) minmax(10%, 20%);
+    grid-template-areas: 
+        "form   form"
+        "nota   nota"
+        "desc   desc";
+
+    justify-items: center;
+    align-content: center;
+
+    row-gap: 1.5rem;
+    column-gap: 1.5rem;
+
+    text-align: center;
+
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+/***************  CONTENEDOR FORMULARIO    ***************/
+.contenedor-formulario{
+    height: 100%;
+
+    grid-area: form;
+
+    grid-template-columns: minmax(30%, 40%) minmax(30%, 60%);
+    grid-template-rows: minmax(20%, 30%) minmax(20%, 30%) minmax(10%, 30%);
+    grid-template-areas: 
+        "nota-desc      nota-sele"
+        "escala-desc    escala-sele"
+        "boton          boton";
+        
+    justify-items: center;
+    
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+
+    font-size: 1.5rem;
+
+    padding: 0rem 0rem 2rem 0rem;
+}
+
+/***************  NOTA MUSICAL(LABEL)    ***************/
+.label-nota-musical{
+    grid-area: nota-desc;
+}
+
+/***************  NOTA MUSICAL(BOTÓN)    ***************/
+#nota-musical{
+    width: 90%;
+    
+    grid-area: nota-sele;
+}
+
+/***************  ESCALA MUSICAL(LABEL)    ***************/
+.label-escala-musical{
+    grid-area: escala-desc;
+}
+
+/***************  ESCALA MUSICAL(BOTÓN)    ***************/
+#escala-musical{
+    width: 90%;
+    
+    grid-area: escala-sele;
+
+    font-size: 1.5rem;
+}
+
+/***************  BOTÓN MUESTRA    ***************/
+.btn{
+    width: 70%;
+    
+    background-color: var(--color4);
+    grid-area: boton;
+    
+    border-radius: 50px;
+    border: solid;
+
+    color: var(--color-blanco);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    
+    cursor: pointer;
+}
+
+/***************  CONTENEDOR MUESTRA ESCALA    ***************/
+.muestra-escala{
+    width: 60%;
+    
+    grid-area: nota;
+    
+    flex-wrap: wrap;
+    
+    font-family: 'Tourney', cursive, fantasy;
+    
+    text-align: center;
+}
+
+.muestra-escala > p{
+    font-size: 4rem;
+    color: var(--color3);
+    
+    font-weight: bolder;
+}
+
+/***************  CONTENEDOR DESCRIPCIÓN    ***************/
+.contenedor-descripcion{
+    height: 100%;
+    grid-area: desc;
+    
+    flex-direction: column;
+
+    gap: 2rem 0rem;
+    
+    font-family: 'Tourney', cursive, fantasy;
+    
+    text-align: center;
+
+    margin: 5rem 0rem 0rem 0rem;
+}
+
+/***************  TITULO DESCRIPCIÓN    ***************/
+.titulo-descripcion{
+    font-size: 2.5rem;
+}
+
+/***************  DESCRIPCIÓN    ***************/
+.descripcion{
+    font-size: 2.5rem;
+    color: var(--color3);
+    
+    font-weight: bolder;
+}
+
+/***************  FOOTER    ***************/
+.footer{
+    min-height: 10vh;
+
+    background-color: var(--color5);
+    
+    flex-direction: column;
+
+    gap: 2rem 0rem;
+    
+    text-align: center;
+    color: var(--color-negro);
+
+    padding: 2rem 0.5rem 2rem 0.5rem;
+}
+
+@media screen and (min-width:600px ) {
+    /***************  CONTENEDOR MAIN    ***************/
+    .contenedor-pagina{
+        min-height: 150vh;
+
+        grid-template-areas: 
+            "form   form"
+            "nota   desc"
+            "nota   desc";
+    }
+
+    /***************  CONTENEDOR DESCRIPCIÓN    ***************/
+    .contenedor-descripcion{
+        width: 100%;
+        
+        gap: 3rem 0rem;
+        
+        justify-content: flex-start;
+    }
+    
+    /***************  TITULO DESCRIPCIÓN    ***************/
+    .titulo-descripcion{
+        font-size: 4rem;
+    }
+    
+    /***************  DESCRIPCIÓN    ***************/
+    .descripcion{
+        width: 40%;
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (min-width:750px ){
+    
+    /***************  DESCRIPCIÓN    ***************/
+    .descripcion{
+        width: 20%;
+        font-size: 3.5rem;
+    }
+
+}
+
+@media screen and (min-width:1024px ) {
+    /***************  TITULO    ***************/
+    .contenedor-titulo{
+        font-size: 5rem;
+    }
+
+    /***************  CONTENEDOR MAIN    ***************/
+    .contenedor-pagina{
+        min-height: 70vh;
+    
+        grid-template-columns: repeat(5, minmax(10%, 20%));
+        grid-template-rows: minmax(10%, 30%) minmax(10%, 20%) minmax(30%, 50%);
+        grid-template-areas: 
+            "form   form    form    form    form"
+            "nota   nota    nota    nota    nota"
+            "desc   desc    desc    desc    desc";
+    
+        row-gap: 3.5rem;
+        column-gap: 3rem;
+    }
+
+    /***************  CONTENEDOR FORMULARIO    ***************/
+    .contenedor-formulario{
+        grid-area: form;
+        grid-template-columns: repeat(3, minmax(20%, 30%));
+        grid-template-rows: repeat(2, minmax(20%, 40%));
+        grid-template-areas: 
+            "nota-desc  boton  escala-desc"
+            "nota-sele  boton  escala-sele";
+        
+        column-gap: 2rem;
+        row-gap: 3rem;
+    
+        font-size: 2rem;
+    }
+
+    /***************  NOTA MUSICAL(BOTÓN)    ***************/
+    #nota-musical{
+        width: 30%;
+    }
+
+    /***************  ESCALA MUSICAL(BOTÓN)    ***************/
+    #escala-musical{
+        width: 90%;
+
+        font-size: 2rem;
+    }
+
+    /***************  BOTÓN MUESTRA    ***************/
+    .btn{
+        width: 90%;
+
+        font-size: 1.5rem;
+    }
+
+    /***************  CONTENEDOR MUESTRA ESCALA    ***************/
+    .muestra-escala{
+        width: 100%;
+    
+        flex-wrap: nowrap;
+    }
+
+    .tarjeta{
+        padding: 1rem 6rem 1rem 6rem;
+    }
+
+    /***************  CONTENEDOR DESCRIPCIÓN    ***************/
+    .contenedor-descripcion{
+        justify-content: center;
+        
+        gap: 4rem 0rem;
+    
+        margin: 0rem 0rem 0rem 0rem;
+    }
+
+    /***************  TITULO DESCRIPCIÓN    ***************/
+    .titulo-descripcion{
+        font-size: 3.5rem;
+    }
+    
+    /***************  DESCRIPCIÓN    ***************/
+    .descripcion{
+        width: 100%;
+        font-size: 2.5rem;
+    }
+
+    /***************  FOOTER    ***************/
+    .footer{
+        justify-content: space-around;
+    
+        flex-direction: row;
+    
+        gap: 0rem 0rem;
+        
+        padding: 2rem 1rem 2rem 1rem;
+    }
+}
+
+

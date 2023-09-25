@@ -6,14 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!--  NO REGISTRAR MEMORIA CACHE  -->
+    <meta http-equiv='Cache-control' content='no-cache, mustrevalidate'>
+    <meta http-equiv='Expires' content='0'>
+    <meta http-equiv='Pragma' content='no-cache'>
+    <meta http-equiv="Last-Modified" content="0">
+
     <!--  TITULO  -->
-    <title>Escalas</title>
+    <title>Escalas musicales</title>
 
     <!--  FAVICON -->
     <link rel="icon" type="image/png" href="./img/logo.png">
 
     <!--  CSS -->
     <link rel="stylesheet" href="./css/style.css">
+
+    <!--  SCRIPT  -->
+    <script src="./js/escalas.js?v=1.0" defer></script>
 
     <!--  FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,56 +32,56 @@
 
   <body class="bg-[#002d72]">
 
-    <main class="contenedor-pagina">
-      <h1>Escalas musicales</h1>
+    <section class="contenedor-titulo flex">
+      <h1 class="titulo">Escalas musicales</h1>
+    </section>
+
+    <main class="contenedor-pagina grid">
       
-      <section class="contenedor-formulario">
-        <form name="formulario" class="formulario">
-          <label for="nota-musical" class="label-nota-musical">Escoja la nota de la escala musical:</label>
-
-          <select required name="nota-musical" id="nota-musical">
-            <option value="Do">DO</option>
-            <option value="Do#">DO#</option>
-            <option value="Re">RE</option>
-            <option value="Re#">RE#</option>
-            <option value="Mi">MI</option>
-            <option value="Fa">FA</option>
-            <option value="Fa#">FA#</option>
-            <option value="Sol">SOL</option>
-            <option value="Sol#">SOL#</option>
-            <option value="La">LA</option>
-            <option value="La#">LA#</option>
-            <option value="Si">SI</option>
-          </select>
-          
-          <br><br>
-          
-          <label for="escala-musical" class="label-escala-musical">Escoja el tipo de escala musical:</label>
-
-          <select name="escala-musical" id="escala-musical">
-            <option value="Mayor">Mayor</option>
-            <option value="MenorN">Menor Natural</option>
-            <option value="MenorH">Menor Harmonica</option>
-            <option value="MenorMA">Menor Melódica Ascendente</option>
-            <option value="MenorMD">Menor Melódica Descendente</option>
-          </select>
-          
-          <br><br>
-          
-          <input type="button" class="btn" value="Mostrar escala" onclick="desplegarEscala()">
-        </form>
+      <form name="formulario" class="contenedor-formulario grid">
+        <label for="nota-musical" class="label-nota-musical">Escoja la nota de la escala musical:</label>
+        
+        <select required name="nota-musical" id="nota-musical">
+          <option value="Do">DO</option>
+          <option value="Do#">DO#</option>
+          <option value="Re">RE</option>
+          <option value="Re#">RE#</option>
+          <option value="Mi">MI</option>
+          <option value="Fa">FA</option>
+          <option value="Fa#">FA#</option>
+          <option value="Sol">SOL</option>
+          <option value="Sol#">SOL#</option>
+          <option value="La">LA</option>
+          <option value="La#">LA#</option>
+          <option value="Si">SI</option>
+        </select>
+        
+        <label for="escala-musical" class="label-escala-musical">Escoja el tipo de escala musical:</label>
+        
+        <select name="escala-musical" id="escala-musical">
+          <option value="Mayor">Mayor</option>
+          <option value="Menor Natural">Menor Natural</option>
+          <option value="Menor Harmonica">Menor Harmonica</option>
+          <option value="Menor Melódica Ascendente">Menor Melódica Ascendente</option>
+          <option value="Menor Melódica Descendente">Menor Melódica Descendente</option>
+        </select>
+        
+        <input type="button" class="btn" value="Mostrar escala" onclick="desplegarEscala();">
+      </form>
+    
+      <section class="muestra-escala tarjeta flex">
       </section>
-      
-      <section class="muestra-escala">
 
+      <section class="contenedor-descripcion flex">
       </section>
     </main>
 
-    <footer class="footer">
-      <p class="footer-derechos">Sitio creado por Sergio Rodríguez Ramírez (2023) &#169;</p>
+    <footer class="footer flex">
+      <p class="footer-autor">Sitio creado por Sergio Rodríguez Ramírez (2023) &#169;</p>
+
+      <section class="footer-creditos">
+        <a href="http://www.laescala.com.mx/blog/que-es-una-escala-musical" class="enlace" target="_blank">laescala.com.mx</a>
+      </section>
     </footer>
   </body>
-
-  <!--  SCRIPT  -->
-  <script src="./js/escalas.js"></script>
 </html>
